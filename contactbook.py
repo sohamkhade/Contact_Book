@@ -1,14 +1,16 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(host="localhost",user="root",password="userroot",database="contact_db");
+mydb = mysql.connector.connect(host="localhost",user="enter user name",password="enter password",database="enter database");
 
 mycursor = mydb.cursor()
 
-mycursor.execute("use contact_db");
+#database should be replaced with the one created in mysql
 
-#mycursor.execute("create table contactBook(Name varchar(20))");
+mycursor.execute("use database");
 
-#mycursor.execute("alter table contactbook add PhoneNumber BigInt");
+mycursor.execute("create table contactBook(Name varchar(20))");
+
+mycursor.execute("alter table contactbook add PhoneNumber BigInt");
 
 def add_contact():
     name = input("Enter Name: ")
